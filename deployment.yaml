@@ -1,0 +1,54 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: pedido-backend
+  labels:
+    cloud.googleapis.com/location: southamerica-east1
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/minScale: '0'
+    run.googleapis.com/max-surge: '0'
+spec:
+  template:
+    metadata:
+      labels:
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        run.googleapis.com/execution-environment: gen2
+        autoscaling.knative.dev/maxScale: '1'
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:     
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 91827266597-compute@developer.gserviceaccount.com
+      containers:
+      - name: pedido-backend
+        image: southamerica-east1-docker.pkg.dev/fiap-tech-challenge-5soat/fiap-docker/pedido-backend:latest
+        ports:
+        - name: http1
+          containerPort: 31302
+        env:
+          - name: PROJECT_ID
+            value: fiap-tech-challenge-5soat
+          - name: REGION
+            value: southamerica-east1
+          - name: VERSAO
+            value: "005"
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                key: latest
+                name: MONGODB_URL          
+        resources:
+          limits:
+            cpu: '1000m'
+            memory: '512Mi'
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 31302
+  traffic:
+  - percent: 100
+    latestRevision: true
