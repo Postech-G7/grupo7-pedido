@@ -1,10 +1,10 @@
-import ExpressConfig from "./express.config";
-import { Environment } from "./environment.config";
+import { Environment } from "./environment.config"
+import ExpressConfig from "configuration/express.config"
 
-Environment();
+Environment()
 
-const app = ExpressConfig();
+const app = ExpressConfig()
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is running on port" + process.env.PORT);
-});
+app.listen(process.env.PORT , () => {
+    console.log("Server Running on http://localhost:" + process.env.PORT)
+})
