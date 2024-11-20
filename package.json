@@ -24,6 +24,7 @@
     "url": "https://github.com/Postech-G7/grupo7-pedido/issues"
   },
   "homepage": "https://github.com/Postech-G7/grupo7-pedido#readme",
+<<<<<<< HEAD
   "dependencies": {
     "@google-cloud/workflows": "^3.4.0",
     "@types/cors": "^2.8.17",
@@ -73,5 +74,12 @@
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "typescript-eslint": "^7.8.0"
+=======
+  "keywords": [],
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+>>>>>>> main
   }
 }
