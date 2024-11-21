@@ -15,7 +15,7 @@
     "policy": "gcloud run services set-iam-policy pedido-backend policy.yaml"
   },
   "keywords": [],
-  "author": "Ciro Oshiro, Daniel Clemente, Eliane Yumi",
+  "author": "Grupo 7 SOAT - FIAP",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/workflows": "^3.4.0",
