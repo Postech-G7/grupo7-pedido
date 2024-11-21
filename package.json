@@ -10,7 +10,7 @@
     "lint": "eslint -c .ts src",
     "lint:fix": "eslint --ext .ts src --fix",
     "test": "jest",
-    "build": "gcloud builds submit --tag southamerica-east1-docker.pkg.dev/fiap-tech-challenge-5soat/fiap-docker/pedido-backend:latest",
+    "build": "gcloud builds submit --tag gcr.io/PROJECT_ID/my-image:latest .",
     "deploy": "gcloud run services replace deployment.yaml",
     "policy": "gcloud run services set-iam-policy pedido-backend policy.yaml"
   },
