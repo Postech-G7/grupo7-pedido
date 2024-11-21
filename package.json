@@ -1,8 +1,8 @@
 {
-  "name": "grupo7-pedido",
+  "name": "api",
   "version": "1.0.0",
-  "description": "Api para microservico de pedidos",
-  "main": "index.js",
+  "description": "Tech Challenge",
+  "main": "src/server.config.ts",
   "scripts": {
     "dev": "tsx watch src/application",
     "start": "tsx src/application",
@@ -14,16 +14,9 @@
     "deploy": "gcloud run services replace deployment.yaml",
     "policy": "gcloud run services set-iam-policy pedido-backend policy.yaml"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Postech-G7/grupo7-pedido.git"
-  },
-  "author": "fiap-grupo7",
+  "keywords": [],
+  "author": "Ciro Oshiro, Daniel Clemente, Eliane Yumi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Postech-G7/grupo7-pedido/issues"
-  },
-  "homepage": "https://github.com/Postech-G7/grupo7-pedido#readme",
   "dependencies": {
     "@google-cloud/workflows": "^3.4.0",
     "@types/cors": "^2.8.17",
@@ -43,7 +36,6 @@
     "jsonwebtoken": "^9.0.2",
     "lodash.isequal": "^4.5.0",
     "mongodb": "^6.3.0",
-    "pnpm": "^9.13.0",
     "qrcode": "^1.5.3",
     "swagger-ui-express": "^5.0.0"
   },
