@@ -17,7 +17,7 @@ router.get('/v1',
         }]        
         #swagger.tags = ['Pedido']
     */ 
-    return next(new CustomResponse(200, 'OK - FASE 3.', null));
+    return next(new CustomResponse(200, 'HealthOK - FASE 4.', null));
   });
 
 

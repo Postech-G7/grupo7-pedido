@@ -6,5 +6,5 @@ Environment()
 const app = ExpressConfig()
 
 app.listen(process.env.PORT , () => {
-    console.log("Server Running on Port " + process.env.PORT)
+    console.log("Server Running on http://localhost:" + process.env.PORT)
 })
