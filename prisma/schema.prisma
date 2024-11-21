@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  nome          String
+  cpf           String
+  email         String
+  versao        Versao   @relation(fields: [versaoId], references: [id])
+  versaoId      String
+  pedidos       Pedido[]
+}
+
+model Versao {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  actual_version String
+  dateInput      DateInput @relation(fields: [dateInputId], references: [id])
+  dateInputId    String
+  clientes       Cliente[]
+}
+
+model DateInput {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  date          BigInt
+  versao         Versao[]
+}
+
+model PedidoItem {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  pedido        Pedido   @relation(fields: [pedidoId], references: [id])
+  pedidoId      String
+  item          Item     @relation(fields: [itemId], references: [id])
+  itemId        String
+}
+
+model Pedido {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  codigoPedido  String
+  cliente       Cliente   @relation(fields: [clienteId], references: [id])
+  clienteId     String
+  data          String
+  horaEntrada   String
+  horaSaida     String?
+  valor         Int
+  status        String
+  pedidoItems   PedidoItem[]
+}
+
+model Item {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  codigoProduto   String
+  quantidade      Int
+  pedidoItems    PedidoItem[]
+}
