@@ -38,7 +38,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: latest
-                name: MONGODB_URL          
+                name: MONGODB_URL
         resources:
           limits:
             cpu: '1000m'
