@@ -22,8 +22,8 @@ spec:
       timeoutSeconds: 300
       serviceAccountName: ci-cd-github-actions@storied-imprint-441522-s7.iam.gserviceaccount.com
       containers:
-      - name: pedido-backend
-        image: us-central1-docker.pkg.dev/storied-imprint-441522-s7/pedido/pedido-backend:latest
+      - name: pedido
+        image: us-central1-docker.pkg.dev/storied-imprint-441522-s7/gcr.io/pedido:latest
         ports:
         - name: http1
           containerPort: 31302
@@ -35,10 +35,7 @@ spec:
           - name: VERSAO
             value: "005"
           - name: DATABASE_URL
-            valueFrom:
-              secretKeyRef:
-                key: latest
-                name: MONGODB_URL
+            value: '${{ secrets.DATABASE_URL }}'
         resources:
           limits:
             cpu: '1000m'
