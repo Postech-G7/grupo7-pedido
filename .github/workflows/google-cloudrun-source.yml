@@ -51,3 +51,7 @@ jobs:
           NODE_ENV: 'production'
           DATABASE_URL: '${{ secrets.DATABASE_URL }}'
           API_KEY: '${{ secrets.API_KEY }}'
+          MERCADOPAGO_USERID: "${{ secrets.MERCADOPAGO_USERID }}"
+          MERCADO_PAGO_TOKEN: "${{ secrets.MERCADO_PAGO_TOKEN }}"
+          MERCADO_PAGO_POS_ID: "${{ secrets.MERCADO_PAGO_POS_ID }}"
+          MERCADO_PAGO_WEBHOOK_URL: "	https://webhook.site/b19c73a2-d53c-445f-9ccb-4289685a38c1"
