@@ -1,9 +1,34 @@
-# ftc-pedido
+# Tech Challenge - API do Microserviço Pedidos
 
-Vídeo demonstrando o funcionamento: https://www.youtube.com/watch?v=EC6GsMfhTKg
+## Descrição
 
-Para implementar o padrão SAGA utilizamos uma abordagem ORQUESTRADA para podermos desacoplar os serviços mas sem perder a visão centralizada do processo, facilitando a análise e compreensão do fluxo como um todo.
+Este projeto é parte do Tech Challenge da FIAP e implementa um microserviço de pedidos. A API fornece um conjunto de recursos e operações para gerenciar pedidos e produtos.
 
-Swagger para simular o fluxo de checkout https://pedido-backend-91827266597.southamerica-east1.run.app/api-docs/#/Pedido/putpedidocheckoutpix
+## Documentação da API
 
-Swagger para simular o webhook de pagamento https://pagamento-backend-91827266597.southamerica-east1.run.app/api-docs/#/Pagamento/postWebhookMercadopago
+A documentação completa da API pode ser acessada em `/api-docs` após iniciar o servidor.
+
+### Informações Gerais
+
+- **Versão**: 1.0.0
+- **Título**: Tech Challenge Fiap
+- **Descrição**: Conjuntos de recursos e operações do Tech Challenge da FIAP
+- **Host**: pagamento-backend-472933699837.us-central1.run.app
+- **BasePath**: /
+- **Esquemas**: http
+
+### Tags
+
+- **Pagamento**: APIs do domínio de Pagamento
+
+## Endpoints
+
+### Health Check
+
+- **URL**: `/api/health-check/v1`
+- **Método**: GET
+- **Descrição**: Health Check da API
+- **Tags**: Pedido
+- **Segurança**: JWT
+
+
