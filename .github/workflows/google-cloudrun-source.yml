@@ -26,6 +26,9 @@ jobs:
       - name: 'Install dependencies'
         run: 'npm install'
 
+      - name: 'Run tests'
+        run: 'npm test'
+
       - name: 'Authenticate to GCP'
         uses: 'google-github-actions/auth@v1'
         with:
@@ -36,22 +39,5 @@ jobs:
         with:
           project_id: 'storied-imprint-441522-s7'
 
-      - name: 'Configure Docker'
-        run: gcloud auth configure-docker --quiet
-
-      - name: 'Build Docker image'
-        run: docker build -t gcr.io/storied-imprint-441522-s7/pedido:latest .
-
-      - name: 'Push Docker image'
-        run: docker push gcr.io/storied-imprint-441522-s7/pedido:latest
-
       - name: 'Deploy to Cloud Run'
-        run: gcloud run deploy pedido-backend --image gcr.io/storied-imprint-441522-s7/pedido:latest --region us-central1 --platform managed --allow-unauthenticated
-        env:
-          NODE_ENV: 'production'
-          DATABASE_URL: '${{ secrets.DATABASE_URL }}'
-          API_KEY: '${{ secrets.API_KEY }}'
-          MERCADOPAGO_USERID: "${{ secrets.MERCADOPAGO_USERID }}"
-          MERCADO_PAGO_TOKEN: "${{ secrets.MERCADO_PAGO_TOKEN }}"
-          MERCADO_PAGO_POS_ID: "${{ secrets.MERCADO_PAGO_POS_ID }}"
-          MERCADO_PAGO_WEBHOOK_URL: "	https://webhook.site/b19c73a2-d53c-445f-9ccb-4289685a38c1"
+        run: 'npm run deploy'
