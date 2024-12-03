@@ -10,14 +10,14 @@
     "lint": "eslint -c .ts src",
     "lint:fix": "eslint --ext .ts src --fix",
     "test": "jest",
-    "build": "gcloud builds submit --tag gcr.io/PROJECT_ID/my-image:latest .",
-    "deploy": "gcloud run services replace deployment.yaml",
-    "policy": "gcloud run services set-iam-policy pedido-backend policy.yaml"
+    "build:image": "gcloud builds submit --tag gcr.io/storied-imprint-441522-s7/pedido --project storied-imprint-441522-s7",
+    "deploy": "npm run build:image && gcloud run deploy pedido --service-account ci-cd-github-actions@storied-imprint-441522-s7.iam.gserviceaccount.com --image gcr.io/storied-imprint-441522-s7/pedido --region us-central1 --project storied-imprint-441522-s7"
   },
   "keywords": [],
-  "author": "Grupo 7 SOAT - FIAP",
+  "author": "Grupo 7 SOAT - Charlis Monhol, Luan Reis, Marina Lucas, Roberto Furlan",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/secret-manager": "^5.6.0",
     "@google-cloud/workflows": "^3.4.0",
     "@types/cors": "^2.8.17",
     "@types/jsonwebtoken": "^9.0.6",
