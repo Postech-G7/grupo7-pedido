@@ -29,6 +29,57 @@ A documentação completa da API pode ser acessada em `/api-docs` após iniciar 
 - **Método**: GET
 - **Descrição**: Health Check da API
 - **Tags**: Pedido
-- **Segurança**: JWT
 
+### Produtos
 
+- **URL**: `/api/produtos/v1`
+- **Método**: GET
+- **Descrição**: Lista todos os produtos
+- **Tags**: Produto
+
+- **URL**: `/api/produtos/v1`
+- **Método**: POST
+- **Descrição**: Cria um novo produto
+- **Tags**: Produto
+
+- **URL**: `/api/produtos/v1/{codigo}`
+- **Método**: PUT
+- **Descrição**: Atualiza um produto pelo codigo
+- **Tags**: Produto
+
+- **URL**: `/api/produtos/v1/{codigo}`
+- **Método**: DELETE
+- **Descrição**: Deleta um produto pelo codigo
+- **Tags**: Produto
+
+- **URL**: `/api/produtos/v1/{categoria}`
+- **Método**: GET
+- **Descrição**: Busca produtos por categoria
+- **Tags**: Produto
+
+### Pedidos
+
+- **URL**: `/api/pedidos/v1`
+- **Método**: GET
+- **Descrição**: Lista todos os pedidos
+- **Tags**: Pedido
+
+- **URL**: `/api/pedidos/v1`
+- **Método**: POST
+- **Descrição**: Cria um novo pedido
+- **Tags**: Pedido
+
+- **URL**: `/api/pedidos/v1/{codigoPedido}/status`
+- **Método**: GET
+- **Descrição**: Busca o status de um pedido pelo codigo
+- **Tags**: Pedido
+
+- **URL**: `/api/pedidos/v1/{codigoPedido}`
+- **Método**: GET
+- **Descrição**: Busca um pedido pelo codigo
+- **Tags**: Pedido
+
+- **URL**: `/api/pedidos/v1/{codigoPedido}/checkout/pix`
+- **Método**: PUT
+- **Descrição**: Faz o checkout de um pedido com a forma de pagamento PIX
+- **Tags**: Pedido 
