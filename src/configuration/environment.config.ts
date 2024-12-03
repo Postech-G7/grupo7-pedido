@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { accessSecretVersion } from './secret-manager';
 const NODE_ENV = process.env?.NODE_ENV;
-const ENVS = ["DATABASE_URL", "MERCADO_PAGO_URL", "MERCADO_PAGO_USERID", "MERCADO_PAGO_TOKEN", "MERCADO_PAGO_POS", "MERCADO_PAGO_WEBHOOK_URL"]
+const ENVS = ["DATABASE_URL", "MERCADO_PAGO_URL", "MERCADO_PAGO_USERID", "MERCADO_PAGO_TOKEN", "MERCADO_PAGO_POS", "MERCADO_PAGO_WEBHOOK_URL", "PROJECT_ID", "REGION"];
 
 if (!process.env.NODE_ENV) {
     (async () => {
