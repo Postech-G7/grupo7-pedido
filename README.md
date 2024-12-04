@@ -83,3 +83,12 @@ A documentação completa da API pode ser acessada em `/api-docs` após iniciar 
 - **Método**: PUT
 - **Descrição**: Faz o checkout de um pedido com a forma de pagamento PIX
 - **Tags**: Pedido 
+
+## Como Executar Local
+
+### Desenvolvimento
+
+Para iniciar o servidor em modo de desenvolvimento localmente, execute:
+
+```sh
+npm run dev
