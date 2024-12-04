@@ -4,7 +4,7 @@
   "description": "Tech Challenge",
   "main": "src/server.config.ts",
   "scripts": {
-    "dev": "tsx watch src/application",
+    "dev": "NODE_ENV=development tsx watch src/application",
     "start": "tsx src/application",
     "swagger": "tsx src/swagger.ts",
     "lint": "eslint -c .ts src",
